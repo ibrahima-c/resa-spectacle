@@ -9,9 +9,24 @@
 
 	<div class="w3-container">
 		<p>
-			<a href="">Accueil</a>
+			<a href="accueil">Accueil</a>
 		</p>
-		<h1>Liste Complête des Spectacles</h1>
+		<h1>Liste des Spectacles</h1>
+
+
+		<form method="post" action="affinerListe">
+			<p>
+				<label>Catégories</label> <select name="categoryTitle">
+					<option value="${selected}" selected>${selected}</option>
+					<c:forEach items="${categories}" var="category">
+						<c:if test="${category != selected}">
+							<option value="${category.title}" >${category.title}</option>
+						</c:if>
+					</c:forEach>
+				</select> <label>Date</label> <input type="date" name="date" /> <input class="w3-button w3-black" type="submit" value="Affiner la liste">
+			</p>
+		</form>
+
 
 		<c:choose>
 			<c:when test="${not empty spectacles}">

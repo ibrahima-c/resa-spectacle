@@ -3,6 +3,7 @@ package fr.m2iformation.resaspectacle.services.impl;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,7 +32,7 @@ public class SpectacleService implements ISpectacleService {
 
     @Override
     public void addCategory( Category category ) {
-        categoryDao.save( category );
+    	categoryDao.save( category );
     }
 
     @Override
@@ -65,7 +66,8 @@ public class SpectacleService implements ISpectacleService {
 
     @Override
     public Spectacle findSpectacleById( Integer spectacleId ) {
-        return spectacleDao.getOne( spectacleId );
+    	Optional<Spectacle> spectacleOptional = spectacleDao.findById(spectacleId);
+        return spectacleOptional.get();
     }
 
     @Override
@@ -97,7 +99,8 @@ public class SpectacleService implements ISpectacleService {
 
     @Override
     public Session findSessionById( Integer sessionId ) {
-        return sessionDao.getOne( sessionId );
+    	Optional<Session> sessionOptional = sessionDao.findById(sessionId);
+        return sessionOptional.get();
     }
 
     @Override

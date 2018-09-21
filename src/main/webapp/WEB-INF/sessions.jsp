@@ -9,7 +9,7 @@
 
 	<div class="w3-container">
 	<p>
-			<a href="">Accueil</a><br/>
+			<a href="accueil">Accueil</a><br/>
 			<a href="listeDesSpectacles">Page précédente</a>
 		</p>
 		<h1>Liste des Sessions trouvées</h1>

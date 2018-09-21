@@ -6,3 +6,14 @@ INFO  f.m.r.ResaSpectacleApplicationTests - testFindSpectacleById : Spectacle [t
 INFO  f.m.r.ResaSpectacleApplicationTests - TestAddCategory : id=71
 INFO  f.m.r.ResaSpectacleApplicationTests - TestAllCategory : listes des catégories =[Category [title=Theatre], Category [title=Concert], Category [title=Concert]]
 INFO  f.m.r.ResaSpectacleApplicationTests - testAddSpectacle : Spec ajouter =Spectacle [title=titreTestAdd, description=descriptionTestAdd, duration=240, price=40.0, nbPlaces=300]
+INFO  f.m.r.ResaSpectacleApplicationTests - Starting ResaSpectacleApplicationTests on FORMATI-959B9C8 with PID 8340 (started by Formation in C:\Users\Formation\Desktop\Cours - Cursus Java JEE - M2i\eclipse-workspace\resa-spectacle)
+DEBUG f.m.r.ResaSpectacleApplicationTests - Running with Spring Boot v2.0.5.RELEASE, Spring v5.0.9.RELEASE
+INFO  f.m.r.ResaSpectacleApplicationTests - No active profile set, falling back to default profiles: default
+INFO  f.m.r.ResaSpectacleApplicationTests - Started ResaSpectacleApplicationTests in 4.841 seconds (JVM running for 5.524)
+INFO  f.m.r.ResaSpectacleApplicationTests - testFindSessionsOfSpectacle : []
+INFO  f.m.r.ResaSpectacleApplicationTests - testFindSpectaclesByCategory : []
+INFO  f.m.r.ResaSpectacleApplicationTests - TestAddCategory : id=1
+INFO  f.m.r.ResaSpectacleApplicationTests - TestAllCategory : listes des catégories =[Category [title=Cirque], Category [title=Concert], Category [title=Film], Category [title=Theatre], Category [title=Accrobate]]
+INFO  f.m.r.ResaSpectacleApplicationTests - testAddSession : Session [date=Fri Sep 21 14:41:50 CEST 2018, startTime=null, nbRemainingPlaces=59]
+INFO  f.m.r.ResaSpectacleApplicationTests - testAddSpectacle : Spec ajouter =Spectacle [title=titreTestAdd, description=descriptionTestAdd, duration=240, price=40.0, nbPlaces=300]
+INFO  f.m.r.ResaSpectacleApplicationTests - testUpdateSpectacle : Spectacle [title=titreTestUpdate, description=descriptionTestUpdate, duration=40, price=4.0, nbPlaces=17]

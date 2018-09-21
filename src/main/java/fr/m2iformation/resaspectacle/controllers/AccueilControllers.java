@@ -1,13 +1,17 @@
 package fr.m2iformation.resaspectacle.controllers;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import fr.m2iformation.resaspectacle.models.spectacles.Category;
@@ -22,13 +26,19 @@ public class AccueilControllers {
     private ISpectacleService serviceSpectacle;
 
     @GetMapping( "/" )
-    public String pageAccueil( Model model ) {
+    public String pageAccueil1( Model model ) {
+        model.addAttribute( "date", LocalDate.now() );
+        return "index";
+    }
+
+    @GetMapping( "/accueil" )
+    public String pageAccueil2( Model model ) {
         model.addAttribute( "date", LocalDate.now() );
         return "index";
     }
 
     @GetMapping( "/listeDesSpectacles" )
-    public String pageListes( Model model ) {
+    public String pageListe( Model model ) {
         List<Category> categories = serviceSpectacle.allCategories();
         List<Spectacle> allSpectacles = new ArrayList<Spectacle>();
         List<Spectacle> spectaclesParCategorie;
@@ -38,6 +48,20 @@ public class AccueilControllers {
                 allSpectacles.addAll( spectaclesParCategorie );
         }
         model.addAttribute( "spectacles", allSpectacles );
+        model.addAttribute( "categories", categories );
+        return "listeDesSpectacles";
+    }
+
+    @PostMapping( "/affinerListe" )
+    public String pageListeAffinee( Model model, @RequestParam( name = "categoryTitle" ) String title,
+            @RequestParam( name = "date" ) String dateInString ) throws ParseException {
+
+        SimpleDateFormat formatter = new SimpleDateFormat( "yyyy-MM-dd" );
+        Date date = formatter.parse( dateInString );
+
+        System.out.println( date );
+        System.out.println( title );
+
         return "listeDesSpectacles";
     }
 

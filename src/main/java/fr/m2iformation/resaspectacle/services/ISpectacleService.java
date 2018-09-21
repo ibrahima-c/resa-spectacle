@@ -18,25 +18,34 @@ public interface ISpectacleService {
     // test OK
     List<Category> allCategories();
 
+    // test OK
     List<Spectacle> findSpectaclesByCategory( Integer categoryId );
 
+    // test OK
     List<Spectacle> findSpectaclesByCriteria( Date date, Integer categoryId );
 
     // test OK
     void addSpectacle( Spectacle spectacle, Integer categoryId );
 
+    // test OK
     void updateSpectacle( Spectacle spectacle );
 
+    // test OK
     void removeSpectacle( Integer spectacleId );
 
+    // test OK
     void addSession( Integer spectacleId, Session session );
 
+    // test OK
     List<Session> findSessionsOfSpectacle( Integer spectacleId );
 
+    // test OK
     Session findSessionById( Integer sessionId );
 
+    // test OK
     void removeSession( Integer sessionId );
 
+    // test OK
     Spectacle findSpectacleById( Integer spectacleId );
 
 }
