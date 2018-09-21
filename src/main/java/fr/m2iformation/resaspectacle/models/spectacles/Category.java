@@ -13,13 +13,13 @@ import fr.m2iformation.resaspectacle.models.abstraits.AbstractEntity;
 @Entity
 public class Category extends AbstractEntity {
 
-    private CategoryName   title;
+    private String         title;
 
     @OneToMany( cascade = CascadeType.ALL )
     @JoinColumn( name = "category_id" )
     private Set<Spectacle> spectacles;
 
-    public Category( CategoryName title ) {
+    public Category( String title ) {
         this.title = title;
     }
 
@@ -27,11 +27,11 @@ public class Category extends AbstractEntity {
         this( null );
     }
 
-    public CategoryName getTitle() {
+    public String getTitle() {
         return title;
     }
 
-    public void setTitle( CategoryName title ) {
+    public void setTitle( String title ) {
         this.title = title;
     }
 
